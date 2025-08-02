@@ -1,59 +1,74 @@
 
 'use client';
 
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { CheckSquare, Lightbulb, Pencil, Search } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { CheckSquare, Mic, Pencil } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
+  const router = useRouter();
+
+  const handleStart = () => {
+    router.push('/dashboard/focus/generate-wireframes');
+  };
+
   return (
     <main className="flex min-h-screen w-full flex-col p-4 sm:p-6 md:p-8">
       <div className="mx-auto w-full max-w-4xl">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Aura Dashboard
-          </h1>
-          <p className="mt-2 text-lg text-muted-foreground">
-            Hello Riley, what would you like to accomplish today?
-          </p>
-        </header>
+        <div className="space-y-8">
+          {/* Intent Box */}
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <Label htmlFor="user-goal" className="text-base font-semibold">
+                Hello Riley, what is your goal today?
+              </Label>
+              <Button variant="ghost" size="icon">
+                <Mic className="h-5 w-5" />
+                <span className="sr-only">Use Microphone</span>
+              </Button>
+            </div>
+            <Textarea
+              id="user-goal"
+              placeholder="e.g., 'Create a settings screen for a user profile...'"
+              className="min-h-[100px] text-base"
+            />
+            <Button size="lg" className="w-full text-lg" onClick={handleStart}>
+              Start
+            </Button>
+          </div>
 
-        <div className="relative mb-8">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-          <Input placeholder="Search for a task..." className="pl-10" />
-        </div>
-
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <Link href="/dashboard/focus/generate-wireframes">
-            <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-              <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle>Generate UI Wireframes</CardTitle>
-                <Pencil className="h-6 w-6 text-muted-foreground" />
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">Create low-fidelity mockups for your app.</p>
-              </CardContent>
-            </Card>
-          </Link>
-          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle>Run Accessibility Audit</CardTitle>
-              <CheckSquare className="h-6 w-6 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Check your app for WCAG compliance.</p>
-            </CardContent>
-          </Card>
-          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle>Brainstorm Creative Concepts</CardTitle>
-              <Lightbulb className="h-6 w-6 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Get new ideas for features and designs.</p>
-            </CardContent>
-          </Card>
+          {/* Common Workflows */}
+          <div>
+            <h2 className="mb-4 text-lg font-semibold tracking-tight text-foreground">
+              Or, start with a common workflow:
+            </h2>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              <Link href="/dashboard/focus/generate-wireframes">
+                <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+                  <CardHeader className="flex flex-row items-center justify-between pb-2">
+                    <CardTitle>Generate UI Wireframes</CardTitle>
+                    <Pencil className="h-6 w-6 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">Create low-fidelity mockups for your app.</p>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+                <CardHeader className="flex flex-row items-center justify-between pb-2">
+                  <CardTitle>Run Accessibility Audit</CardTitle>
+                  <CheckSquare className="h-6 w-6 text-muted-foreground" />
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground">Check your app for WCAG compliance.</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
       </div>
     </main>
