@@ -11,8 +11,12 @@ import { useRouter } from 'next/navigation';
 export default function DashboardPage() {
   const router = useRouter();
 
-  const handleStart = () => {
+  const handleStartWireframe = () => {
     router.push('/dashboard/focus/generate-wireframes');
+  };
+
+  const handleStartAudit = () => {
+    router.push('/dashboard/focus/run-audit');
   };
 
   return (
@@ -34,7 +38,7 @@ export default function DashboardPage() {
               placeholder="e.g., 'Create a settings screen for a user profile...'"
               className="min-h-[100px] text-base"
             />
-            <Button size="lg" className="w-full text-lg" onClick={handleStart}>
+            <Button size="lg" className="w-full text-lg" onClick={handleStartWireframe}>
               Start
             </Button>
           </div>
@@ -46,7 +50,7 @@ export default function DashboardPage() {
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <button
-                onClick={handleStart}
+                onClick={handleStartWireframe}
                 aria-label="Start a new UI wireframe generation workflow"
                 className="w-full text-left"
               >
@@ -61,6 +65,7 @@ export default function DashboardPage() {
                 </Card>
               </button>
               <button
+                onClick={handleStartAudit}
                 aria-label="Start a new accessibility audit workflow"
                 className="w-full text-left"
               >
