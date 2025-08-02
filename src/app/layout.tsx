@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'Aura Profile Setup',
-  description: 'Set up your cognitive profile for Aura.',
+  title: 'Aura',
+  description: 'Your cognitive AI partner.',
 };
 
 export default function RootLayout({

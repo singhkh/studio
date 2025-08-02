@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -12,6 +13,7 @@ export function ProfileSetupForm() {
   const [visuals, setVisuals] = useState("minimalist");
   const [notifications, setNotifications] = useState("digest");
   const { toast } = useToast();
+  const router = useRouter();
 
   const handleSave = () => {
     // Here you would typically save the settings to a backend or state management
@@ -21,6 +23,7 @@ export function ProfileSetupForm() {
       description: "Your cognitive profile settings have been successfully updated.",
       duration: 5000,
     });
+    router.push('/dashboard');
   };
 
   return (
