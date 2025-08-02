@@ -58,7 +58,7 @@ export default function RootLayout({
             </Link>
             <Link
               href="/dashboard/modify-button"
-              className="absolute"
+              className="absolute group"
               style={{
                 top: '48%',
                 left: '50%',
@@ -67,7 +67,9 @@ export default function RootLayout({
                 height: '50px',
                 cursor: 'pointer',
               }}
-            ><div /></Link>
+            >
+              <div className="w-full h-full rounded-lg transition-colors group-hover:bg-blue-500/20" />
+            </Link>
           </div>
           <div className="bg-[#f7f7f7] flex flex-col">
             <div key={pathname} className="flex-grow animate-fade-in">
