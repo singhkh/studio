@@ -6,6 +6,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Image from 'next/image';
 import Link from 'next/link';
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
+import { HelpCircle } from 'lucide-react';
 
 {/*
 export const metadata: Metadata = {
@@ -62,8 +64,16 @@ export default function RootLayout({
               }}
             ><div /></Link>
           </div>
-          <div className="bg-[#f7f7f7]">
-            {children}
+          <div className="bg-[#f7f7f7] flex flex-col">
+            <div className="flex-grow">
+              {children}
+            </div>
+            <footer className="p-4 border-t border-border">
+              <Link href="/help" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline">
+                <HelpCircle className="h-5 w-5" />
+                Help Guide
+              </Link>
+            </footer>
           </div>
         </main>
         <Toaster />
