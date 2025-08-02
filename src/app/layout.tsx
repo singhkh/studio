@@ -34,7 +34,7 @@ export default function RootLayout({
               src="https://i.imgur.com/27Gcv2y.png"
               alt="A Figma design of a User Persona Template."
               fill
-              objectFit="cover"
+              objectFit="contain"
               data-ai-hint="design app figma"
             />
             <Link
