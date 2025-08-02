@@ -1,12 +1,21 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 export default function ModifyButtonPage() {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <main className="flex min-h-screen w-full flex-col p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-2xl">
@@ -31,7 +40,7 @@ export default function ModifyButtonPage() {
             <Label htmlFor="button-text" className="text-base">
               Button Text
             </Label>
-            <Input id="button-text" className="mt-2" defaultValue="Get Started" />
+            <Input ref={inputRef} id="button-text" className="mt-2" defaultValue="Get Started" />
           </div>
 
           <div>
