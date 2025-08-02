@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"
 import Image from 'next/image';
 import Link from 'next/link';
 import { HelpCircle } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 {/*
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const router = useRouter();
+  const pathname = usePathname();
 
   return (
     <html lang="en">
@@ -69,7 +70,7 @@ export default function RootLayout({
             ><div /></Link>
           </div>
           <div className="bg-[#f7f7f7] flex flex-col">
-            <div className="flex-grow">
+            <div key={pathname} className="flex-grow animate-fade-in">
               {children}
             </div>
             <footer className="p-4 border-t border-border">
