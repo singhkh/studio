@@ -36,14 +36,14 @@ export default function RootLayout({
           <div className="bg-white relative">
             <Image
               src="https://placehold.co/1200x900.png"
-              alt="Placeholder image"
+              alt="User Persona Template from Figma"
               fill
               objectFit="contain"
-              data-ai-hint="placeholder"
+              data-ai-hint="user persona template"
             />
             <Link
               href="/dashboard"
-              className="absolute"
+              className="group absolute"
               style={{
                 top: '25%',
                 left: '50%',
@@ -52,7 +52,9 @@ export default function RootLayout({
                 height: '60px',
                 cursor: 'pointer',
               }}
-            ><div /></Link>
+            >
+              <div className="w-full h-full rounded-lg transition-colors group-hover:bg-blue-500/20" />
+            </Link>
             <Link
               href="/dashboard/modify-button"
               className="absolute"
