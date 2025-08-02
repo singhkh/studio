@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Aura',
@@ -21,7 +22,15 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <main className="grid grid-cols-[65fr_35fr] min-h-screen">
-          <div className="bg-white" />
+          <div className="bg-white relative">
+            <Image
+              src="https://placehold.co/1200x900.png"
+              alt="Design application canvas with a 'Welcome Screen' title and a 'Get Started' button."
+              layout="fill"
+              objectFit="cover"
+              data-ai-hint="design app canvas"
+            />
+          </div>
           <div className="bg-[#f7f7f7]">
             {children}
           </div>
