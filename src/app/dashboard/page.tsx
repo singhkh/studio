@@ -1,6 +1,10 @@
+
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { CheckSquare, Lightbulb, Pencil, Search } from "lucide-react";
+import Link from "next/link";
 
 export default function DashboardPage() {
   return (
@@ -21,15 +25,17 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1">
-            <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Generate UI Wireframes</CardTitle>
-              <Pencil className="h-6 w-6 text-muted-foreground" />
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Create low-fidelity mockups for your app.</p>
-            </CardContent>
-          </Card>
+          <Link href="/dashboard/focus/generate-wireframes">
+            <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full">
+              <CardHeader className="flex flex-row items-center justify-between pb-2">
+                <CardTitle className="text-lg font-medium">Generate UI Wireframes</CardTitle>
+                <Pencil className="h-6 w-6 text-muted-foreground" />
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Create low-fidelity mockups for your app.</p>
+              </CardContent>
+            </Card>
+          </Link>
           <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
               <CardTitle className="text-lg font-medium">Run Accessibility Audit</CardTitle>
