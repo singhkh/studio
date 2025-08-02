@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function DashboardPage() {
   return (
-    <main className="flex min-h-screen w-full flex-col bg-background p-4 sm:p-6 md:p-8">
+    <main className="flex min-h-screen w-full flex-col p-4 sm:p-6 md:p-8">
       <div className="mx-auto w-full max-w-4xl">
         <header className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

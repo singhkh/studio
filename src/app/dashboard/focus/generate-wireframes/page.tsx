@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function GenerateWireframesPage() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center bg-background p-4 sm:p-6 md:p-8">
+    <main className="flex min-h-screen w-full flex-col items-center p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-2xl">
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
