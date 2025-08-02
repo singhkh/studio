@@ -26,9 +26,9 @@ export default function DashboardPage() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <Link href="/dashboard/focus/generate-wireframes">
-            <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full">
+            <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
               <CardHeader className="flex flex-row items-center justify-between pb-2">
-                <CardTitle className="text-lg font-medium">Generate UI Wireframes</CardTitle>
+                <CardTitle>Generate UI Wireframes</CardTitle>
                 <Pencil className="h-6 w-6 text-muted-foreground" />
               </CardHeader>
               <CardContent>
@@ -36,18 +36,18 @@ export default function DashboardPage() {
               </CardContent>
             </Card>
           </Link>
-          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1">
+          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Run Accessibility Audit</CardTitle>
+              <CardTitle>Run Accessibility Audit</CardTitle>
               <CheckSquare className="h-6 w-6 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground">Check your app for WCAG compliance.</p>
             </CardContent>
           </Card>
-          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1">
+          <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
             <CardHeader className="flex flex-row items-center justify-between pb-2">
-              <CardTitle className="text-lg font-medium">Brainstorm Creative Concepts</CardTitle>
+              <CardTitle>Brainstorm Creative Concepts</CardTitle>
               <Lightbulb className="h-6 w-6 text-muted-foreground" />
             </CardHeader>
             <CardContent>
