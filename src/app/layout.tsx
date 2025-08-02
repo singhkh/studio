@@ -6,8 +6,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Image from 'next/image';
 import Link from 'next/link';
-import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 import { HelpCircle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 {/*
 export const metadata: Metadata = {
@@ -21,6 +21,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const router = useRouter();
+
   return (
     <html lang="en">
       <head>
@@ -69,10 +71,10 @@ export default function RootLayout({
               {children}
             </div>
             <footer className="p-4 border-t border-border">
-              <Link href="/help" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline">
+              <button onClick={() => router.push('/help')} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground hover:underline">
                 <HelpCircle className="h-5 w-5" />
                 Help Guide
-              </Link>
+              </button>
             </footer>
           </div>
         </main>
