@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { CheckSquare, Mic, Pencil } from "lucide-react";
-import Link from "next/link";
 import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
@@ -26,9 +25,8 @@ export default function DashboardPage() {
               <Label htmlFor="user-goal" className="text-base font-semibold">
                 Hello Riley, what is your goal today?
               </Label>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Activate voice input">
                 <Mic className="h-5 w-5" />
-                <span className="sr-only">Use Microphone</span>
               </Button>
             </div>
             <Textarea
@@ -47,7 +45,11 @@ export default function DashboardPage() {
               Or, start with a common workflow:
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <Link href="/dashboard/focus/generate-wireframes">
+              <button
+                onClick={handleStart}
+                aria-label="Start a new UI wireframe generation workflow"
+                className="w-full text-left"
+              >
                 <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
                   <CardHeader className="flex flex-row items-center justify-between pb-2">
                     <CardTitle>Generate UI Wireframes</CardTitle>
@@ -57,16 +59,21 @@ export default function DashboardPage() {
                     <p className="text-sm text-muted-foreground">Create low-fidelity mockups for your app.</p>
                   </CardContent>
                 </Card>
-              </Link>
-              <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
-                <CardHeader className="flex flex-row items-center justify-between pb-2">
-                  <CardTitle>Run Accessibility Audit</CardTitle>
-                  <CheckSquare className="h-6 w-6 text-muted-foreground" />
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">Check your app for WCAG compliance.</p>
-                </CardContent>
-              </Card>
+              </button>
+              <button
+                aria-label="Start a new accessibility audit workflow"
+                className="w-full text-left"
+              >
+                <Card className="cursor-pointer transition-all hover:shadow-lg hover:-translate-y-1 h-full flex flex-col">
+                  <CardHeader className="flex flex-row items-center justify-between pb-2">
+                    <CardTitle>Run Accessibility Audit</CardTitle>
+                    <CheckSquare className="h-6 w-6 text-muted-foreground" />
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">Check your app for WCAG compliance.</p>
+                  </CardContent>
+                </Card>
+              </button>
             </div>
           </div>
         </div>
