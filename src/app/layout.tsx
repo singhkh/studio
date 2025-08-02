@@ -1,12 +1,18 @@
+
+'use client';
+
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import Image from 'next/image';
+import Link from 'next/link';
 
+{/*
 export const metadata: Metadata = {
   title: 'Aura',
   description: 'Your cognitive AI partner.',
 };
+*/}
 
 export default function RootLayout({
   children,
@@ -16,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Aura</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -30,6 +37,19 @@ export default function RootLayout({
               objectFit="cover"
               data-ai-hint="design app canvas"
             />
+            <Link href="/dashboard/modify-button">
+              <div
+                className="absolute"
+                style={{
+                  top: '48%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '150px',
+                  height: '50px',
+                  cursor: 'pointer',
+                }}
+              ></div>
+            </Link>
           </div>
           <div className="bg-[#f7f7f7]">
             {children}
