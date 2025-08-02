@@ -33,36 +33,34 @@ export default function RootLayout({
             <Image
               src="https://placehold.co/1200x900.png"
               alt="Design application canvas with a 'Welcome Screen' title and a 'Get Started' button."
-              layout="fill"
+              fill
               objectFit="cover"
               data-ai-hint="design app canvas"
             />
-            <Link href="/dashboard">
-              <div
-                className="absolute"
-                style={{
-                  top: '25%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '300px',
-                  height: '60px',
-                  cursor: 'pointer',
-                }}
-              ></div>
-            </Link>
-            <Link href="/dashboard/modify-button">
-              <div
-                className="absolute"
-                style={{
-                  top: '48%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  width: '150px',
-                  height: '50px',
-                  cursor: 'pointer',
-                }}
-              ></div>
-            </Link>
+            <Link
+              href="/dashboard"
+              className="absolute"
+              style={{
+                top: '25%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '300px',
+                height: '60px',
+                cursor: 'pointer',
+              }}
+            />
+            <Link
+              href="/dashboard/modify-button"
+              className="absolute"
+              style={{
+                top: '48%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                width: '150px',
+                height: '50px',
+                cursor: 'pointer',
+              }}
+            />
           </div>
           <div className="bg-[#f7f7f7]">
             {children}
