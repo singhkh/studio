@@ -3,11 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export default function ModifyButtonPage() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center p-4 sm:p-6 md:p-8">
+    <main className="flex min-h-screen w-full flex-col p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-2xl">
+        <div className="mb-6">
+          <Link href="/dashboard" className="flex items-center text-sm text-muted-foreground hover:underline">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Workflows
+          </Link>
+        </div>
         <header className="mb-8 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Modify: Button Component

@@ -37,6 +37,19 @@ export default function RootLayout({
               objectFit="cover"
               data-ai-hint="design app canvas"
             />
+            <Link href="/dashboard">
+              <div
+                className="absolute"
+                style={{
+                  top: '25%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '300px',
+                  height: '60px',
+                  cursor: 'pointer',
+                }}
+              ></div>
+            </Link>
             <Link href="/dashboard/modify-button">
               <div
                 className="absolute"
