@@ -31,11 +31,11 @@ export default function RootLayout({
         <main className="grid grid-cols-[65fr_35fr] min-h-screen">
           <div className="bg-white relative">
             <Image
-              src="https://i.imgur.com/27Gcv2y.png"
-              alt="A Figma design of a User Persona Template."
+              src="https://placehold.co/1200x900.png"
+              alt="Placeholder image"
               fill
               objectFit="contain"
-              data-ai-hint="design app figma"
+              data-ai-hint="placeholder"
             />
             <Link
               href="/dashboard"
