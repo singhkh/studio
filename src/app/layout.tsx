@@ -48,7 +48,7 @@ export default function RootLayout({
                 height: '60px',
                 cursor: 'pointer',
               }}
-            />
+            ><div /></Link>
             <Link
               href="/dashboard/modify-button"
               className="absolute"
@@ -60,7 +60,7 @@ export default function RootLayout({
                 height: '50px',
                 cursor: 'pointer',
               }}
-            />
+            ><div /></Link>
           </div>
           <div className="bg-[#f7f7f7]">
             {children}
