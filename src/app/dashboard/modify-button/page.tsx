@@ -11,7 +11,11 @@ export default function ModifyButtonPage() {
     <main className="flex min-h-screen w-full flex-col p-4 sm:p-6 md:p-8">
       <div className="w-full max-w-2xl">
         <div className="mb-6">
-          <Link href="/dashboard" className="flex items-center text-sm text-muted-foreground hover:underline">
+          <Link
+            href="/dashboard"
+            className="flex items-center text-sm text-muted-foreground hover:underline"
+            aria-label="Return to the main workflows dashboard"
+          >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Workflows
           </Link>
@@ -43,7 +47,11 @@ export default function ModifyButtonPage() {
         </div>
 
         <div className="mt-8 flex flex-col items-center space-y-4">
-          <Button size="lg" className="w-full text-lg">
+          <Button
+            size="lg"
+            className="w-full text-lg"
+            aria-label="Apply style and text changes to the selected button component"
+          >
             Apply Changes
           </Button>
         </div>
